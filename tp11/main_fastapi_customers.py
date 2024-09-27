@@ -9,9 +9,10 @@ app = FastAPI()
 # fastapi dev main_fastapi_customers.py
 @app.get("/",response_model=List[Customer])
 def get_customers():
-    dao = CustomerDAO('customers_db.db')
-    customers = dao.find_all()
-    return customers
+    # dao = CustomerDAO('customers_db.db')
+    with CustomerDAO('customers_db.db') as dao:
+        customers = dao.find_all()
+        return customers
 
 
 @app.post("/",response_model=Customer)

@@ -1,5 +1,14 @@
 GET http://127.0.0.1:8000/
 
----
+###
 
-POST 
+POST http://127.0.0.1:8000/
+Content-Type: application/json
+
+{
+    "first_name": "fred",
+    "last_name": "GAURAT",
+    "email": "fgaurat@truc.com",
+    "gender": "Male",
+    "ip_address": "152.89.124.88"
+ }
